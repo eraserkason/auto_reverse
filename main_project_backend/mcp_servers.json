@@ -1,0 +1,37 @@
+{
+  "mcpServers": {
+    "roxybrowser-playwright-mcp-main": {
+      "command": "node",
+      "args": [
+        "/root/auto_reverse_release/roxybrowser-playwright-mcp-main/cli.js",
+        "--log-requests",
+        "--save-session",
+        "--log-session-id"
+      ],
+      "env": {
+        "REDIS_URL": "redis://localhost:6379",
+        "REDIS_SESSION_PREFIX": "browser"
+      }
+    },
+    "roxybrowser-mcp-server": {
+      "command": "node",
+      "args": [
+        "/root/auto_reverse_release/roxybrowser-mcp-server/lib/index.js"
+      ],
+      "env": {
+        "ROXY_API_KEY": "************",
+        "ROXY_API_HOST": "http://127.0.0.1:50000"
+      }
+    },
+    "reverse-network-mcp-server": {
+      "command": "node",
+      "args": [
+        "/root/auto_reverse_release/reverse-network-mcp-server/index.js"
+      ],
+      "env": {
+        "REDIS_URL": "redis://localhost:6379",
+        "REDIS_SESSION_PREFIX": "browser"
+      }
+    }
+  }
+}

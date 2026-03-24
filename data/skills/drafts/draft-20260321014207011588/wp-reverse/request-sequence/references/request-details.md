@@ -1,0 +1,3 @@
+请求1：GET https://www.jeansforgenes.org/donate-online。提取 nonce 和 version_hash。
+请求2：POST https://www.jeansforgenes.org/wp-admin/admin-ajax.php。Content-Type: multipart/form-data; boundary=...。关键字段：input_1, input_12, input_14, input_18.3, input_18.6, input_21, input_15, nonce, version_hash, action=gfstripe_validate_form, form_id=25, feed_id=14。
+请求3：POST https://api.stripe.com/v1/payment_intents/pi_.../confirm。Content-Type: application/x-www-form-urlencoded。关键字段：payment_method_data[card][number], payment_method_data[card][cvc], payment_method_data[card][exp_year], payment_method_data[card][exp_month], client_secret, return_url。

@@ -1,0 +1,1 @@
+function o(){return typeof window<"u"&&typeof window.localStorage<"u"}function i(r,t){var n;if(!o())return t;const e=((n=window.localStorage.getItem(r))==null?void 0:n.trim())??"";if(!e)return t;try{return JSON.parse(e)}catch{return t}}function a(r,t){if(o())try{window.localStorage.setItem(r,JSON.stringify(t))}catch{}}export{i as r,a as w};

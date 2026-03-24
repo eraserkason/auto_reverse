@@ -1,0 +1,1 @@
+非结构化提取模式：在 HTML/JS 中搜索 `validate_form_nonce` 和 `hash=`。JSON 结构化提取：解析 JSON，访问 `data.intent.id` 和 `data.intent.client_secret`。

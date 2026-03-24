@@ -1,0 +1,1 @@
+目标网站：www.jeansforgenes.org/donate-online。这是一个使用 Gravity Forms 和 Stripe 支付网关的 WordPress 网站。流程涉及获取页面、提交 AJAX 验证、确认支付意图。关键参数 nonce 和 version_hash 从第一个响应的内联脚本中动态生成，用于防止 CSRF 和确保表单版本一致性。

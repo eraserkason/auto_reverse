@@ -1,0 +1,50 @@
+{
+  "name": "@roxybrowser/openapi",
+  "version": "1.0.9",
+  "description": "MCP server for RoxyBrowser automation - manage browser instances and get CDP endpoints",
+  "type": "module",
+  "bin": {
+    "roxy-browser-mcp": "lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roxybrowserlabs/roxybrowser-mcp-server.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node lib/index.js",
+    "dev": "tsc --watch",
+    "clean": "npx rimraf lib",
+    "publish:release": "npm run clean && npm version patch --no-git-tag-version && npm run build && npm publish",
+    "publish:beta": "npm version prerelease --preid=beta --no-git-tag-version && npm run build && npm publish --tag beta"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "roxybrowser",
+    "browser-automation",
+    "cdp",
+    "chrome-devtools-protocol"
+  ],
+  "files": [
+    "lib",
+    "package.json"
+  ],
+  "author": "RoxyBrowser",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.2",
+    "rimraf": "^6.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
