@@ -2,7 +2,10 @@
 
 ## 演示视频
 
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=116284243053255&bvid=BV1XbQrBNEYr&cid=36945398536&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+[![Bilibili 演示视频](https://img.shields.io/badge/Bilibili-点击观看演示视频-00A1D6?style=for-the-badge&logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1XbQrBNEYr/)
+
+视频地址：<https://www.bilibili.com/video/BV1XbQrBNEYr/>
+
 ## 目录说明
 
 - `main_project_backend/`：FastAPI 后端
@@ -145,24 +148,11 @@ flowchart LR
         URLs[批量 URL 列表]
     end
 
-    %% ================= 共享能力层 =================
-    subgraph shared [共享能力层]
-        MCPTools[MCP Tool Layer]
-        Skills[Skills Layer]
-    end
-
     %% ================= Browser Agent 层 =================
     subgraph browser [Browser Agent 执行层]
         BA1[Browser Agent 1]
         BA2[Browser Agent 2]
         BAN[Browser Agent N]
-    end
-
-    %% ================= Hook 层 =================
-    subgraph hooks [任务完成 Hook 层]
-        H1[Completion Hook 1]
-        H2[Completion Hook 2]
-        HN[Completion Hook N]
     end
 
     %% ================= 数据采集层 =================
@@ -197,20 +187,6 @@ flowchart LR
     URLs --> BA2
     URLs --> BAN
 
-    MCPTools -. 挂载 .-> BA1
-    MCPTools -. 挂载 .-> BA2
-    MCPTools -. 挂载 .-> BAN
-    Skills -. 挂载 .-> BA1
-    Skills -. 挂载 .-> BA2
-    Skills -. 挂载 .-> BAN
-
-    MCPTools -. 挂载 .-> A1
-    MCPTools -. 挂载 .-> A2
-    MCPTools -. 挂载 .-> AN
-    Skills -. 挂载 .-> A1
-    Skills -. 挂载 .-> A2
-    Skills -. 挂载 .-> AN
-
     BA1 --> MCPServer
     BA2 --> MCPServer
     BAN --> MCPServer
@@ -223,14 +199,6 @@ flowchart LR
     RedisWriter --> SessionStream
     RedisWriter --> NetworkStream
     RedisWriter --> SessionSet
-
-    BA1 -. 完成事件 .-> H1
-    BA2 -. 完成事件 .-> H2
-    BAN -. 完成事件 .-> HN
-
-    H1 -. 直接触发 .-> A1
-    H2 -. 直接触发 .-> A2
-    HN -. 直接触发 .-> AN
 
     SessionStream --> RedisReader
     NetworkStream --> RedisReader
