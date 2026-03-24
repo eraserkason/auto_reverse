@@ -24,6 +24,17 @@
 3. 安装 Python / Node 依赖
 4. 启动 MySQL、Redis、后端、前端
 
+## API 对接说明
+
+- 本项目已对接 `newapi`，并内置 `newapi` SDK，可直接结合当前工程配置使用
+- 本项目支持多并发目标
+- 本项目支持无头模式
+- 同时对接官方 `deepseel`、`chatgpt`、`claude`、`gemini`
+
+参考文档：
+
+- <https://docs.newapi.pro/en/docs/api>
+
 ## MCP 工具安装说明
 
 当前 `auto_reverse_release` 目录内包含 3 个本地 MCP 子项目：
@@ -139,7 +150,7 @@ npx playwright install chromium
 - https://github.com/eraserkason/roxybrowser-playwright-mcp
 
 
-##业务流程架构
+## 业务流程架构
 
 ```mermaid
 flowchart LR
