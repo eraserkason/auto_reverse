@@ -29,7 +29,7 @@
 - 本项目已对接 `newapi`，并内置 `newapi` SDK，可直接结合当前工程配置使用
 - 本项目支持多并发目标
 - 本项目支持无头模式
-- 同时对接官方 `deepseel`、`chatgpt`、`claude`、`gemini`
+- 同时对接官方 `deepseek`、`chatgpt`、`claude`、`gemini`
 
 参考文档：
 
